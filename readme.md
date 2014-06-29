@@ -19,7 +19,7 @@ elem.scrollRotate(opts);
 
 ### Demo
 
-[Link to demo](#)
+[Link to demo](http://iqbalperkasa.github.io/jquery-scroll-rotate/)
 
 ### License
 
