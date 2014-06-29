@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>jquery-scroll-rotate</title>
+	<meta name="description" content="A super-tiny jQuery (or Zepto) plugin to rotate objects by scrolling window.">
+	<link rel="stylesheet" type="text/css" href="recsset.min.css">
+	<style>
+		body {
+			min-height: 6000px;
+			font: 16px/2 normal;
+			font-family: 'Arial', sans-serif;
+			padding: 60px 120px;
+			color: #333;
+		}
+		h3 {
+			margin-bottom: 0;
+		}
+		h3 a,
+		h3 span {
+			font: 14px/1 bold;
+			font-family: inherit;
+		}
+		h3 a:nth-child(2) {
+			margin-left: 20px;
+		}
+		h4 {
+			margin-bottom: 10px;
+		}
+		.hr {
+			width: 50px; height: 2px;
+			background: #ddd;
+			border: none;
+			margin: 30px 0;
+		}
+		.block div {
+			padding: 20px;
+			border: 1px solid #bbb;
+			background: white;
+			border-radius: 3px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		.block div:hover {
+			border-color: #888;
+		}
+		div.fixed,
+		.block div:active {
+			background: #eee;
+			z-index: 9999;
+		}
+		div.fixed {
+			position: fixed;
+			border-color: #888;
+			box-shadow: 0 2px 3px #ccc inset;
+		}
+		pre {
+			font: 13px/1.5 normal;
+		}
+		code {
+			background: #eee;
+			padding: 3px 7px;
+			border-radius: 3px;
+			display: inline-block;
+			border: 1px solid #ccc;
+		}
+		#note {
+			position: fixed;
+			font: 13px/2 normal;
+			font-family: inherit;
+			bottom: 20px; right: 20px;
+		}
+		#note:before {
+			font-weight: bold;
+			content: 'Note: ';
+		}
+	</style>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h3>jquery-scroll-rotate <span>v2</span> <a href="http://git.io/jqueryscrollrotate">on Github</a></h3>
+		<hr>
+		<div>A super-tiny (&lt;1KB, minified) jQuery (or Zepto) plugin to rotate elements by scrolling window</div>
+		<div>by <a href="http://github.com/iqbalperkasa">@iqbalperkasa</a></div>
+		<hr>
+		<h4>Default usage</h4>
+		<div class="block">
+			<pre><code>elem.scrollRotate();</code></pre>
+			<div>
+				<img src="vinyl.svg" class="rotate">
+			</div>
+		</div>
+		<hr>
+		<h4>Couterclockwise</h4>
+		<div class="block">
+			<pre><code>elem.scrollRotate({
+	clockwise: false
+});</code></pre>
+			<div>
+				<img src="vinyl.svg" class="rotate cc">
+			</div>
+		</div>
+		<hr>
+		<h4>Without smooth transition</h4>
+		<div class="block">
+			<pre><code>elem.scrollRotate({
+	smooth: false
+});</code></pre>
+			<div>
+				<img src="vinyl.svg" class="rotate no-smooth">
+			</div>
+		</div>
+		<hr>
+		<h4>Faster speed</h4>
+		<div class="block">
+			<pre><code>elem.scrollRotate({
+	speed: 2
+});</code></pre>
+			<div>
+				<img src="vinyl.svg" class="rotate faster">
+			</div>
+		</div>
+		<hr>
+		<h4>Fasterer</h4>
+		<div class="block">
+			<pre><code>elem.scrollRotate({
+	speed: 100
+});</code></pre>
+			<div>
+				<img src="vinyl.svg" class="rotate fasterer">
+			</div>
+		</div>
+		<hr>
+		<div><a href="http://opensource.org/licenses/MIT">MIT License</a></div>
+	</div>
+	<div id="note">Click the icon to make it stick</div>
+	<script src="zepto.min.js"></script>
+	<script src="demo.js"></script>
+	<script src="jquery-scroll-rotate.js"></script>
+	<script>
+		$('.rotate').scrollRotate();
+		$('.rotate.cc').scrollRotate({
+			clockwise: false
+		});
+		$('.rotate.no-smooth').scrollRotate({
+			smooth: false
+		});
+		$('.rotate.faster').scrollRotate({
+			speed: 2
+		});
+		$('.rotate.fasterer').scrollRotate({
+			speed: 100
+		});
+	</script>
+</body>
+
+</html>
